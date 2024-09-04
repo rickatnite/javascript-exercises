@@ -10,11 +10,11 @@ This setup should be the same for all of the exercises.  The plain javascript fi
 
 Let's look at the spec file first:
 ```javascript
-const helloWorld = require('./helloWorld');
+const helloWorld = require('./helloWorld'); // require function imports code from the js file in the () to test
 
-describe('Hello World', function() {
-  test('says "Hello, World!"', function() {
-    expect(helloWorld()).toEqual('Hello, World!');
+describe('Hello World', function() { // describe function gives the body of the test and runs the code to test the output
+  test('says "Hello, World!"', function() { // test function describes the expected result in plain english using the expect function
+    expect(helloWorld()).toEqual('Hello, World!'); 
   });
 });
 ```
@@ -30,7 +30,7 @@ const helloWorld = function() {
   return ''
 }
 
-module.exports = helloWorld
+module.exports = helloWorld // this is how to export the function so it can be imported with require() in the spec file
 ```
 In this file we have a simple function called helloWorld that returns an empty string... which is exactly what our test was complaining about.  The `module.exports` on the last line is how we export the function so that it can be imported with `require()` in the spec file.
 
